@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TovShoer</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% if user_signed_in? %>
+      <header class="navbar navbar-fixed-top navbar-inverse">
+        <nav class="navbar-inner">
+          <div class="container">
+              <%= render 'layouts/navigation' %>
+          </div>
+        </nav>
+      </header>
+    <% end %>
+  <main role="main">
+    <div class="container">
+      <div class="content">
+         <div class="row">
+          <div class="span12">
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  </body>
+</html>

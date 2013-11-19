@@ -1,0 +1,35 @@
+<div class="navbar-header">
+  <% if user_signed_in? %>
+    <%= link_to image_tag(current_user.picture) + " #{current_user.name}", player_url(current_user.id), :class => 'brand' %>
+  <% end %>
+</div>
+<ul class="nav navbar-nav">
+  <li><%= link_to "Create Arena", "" %></li>
+</ul>
+<ul class="nav pull-right">
+  <% if user_signed_in? %>
+    <li class="pull-right">
+      <%= link_to "My Account", edit_user_registration_path %>
+    </li>
+    <li class="pull-right">
+      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+    </li>
+  <% end %>
+</ul>
+  <!--<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Scouting <span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li><%= link_to "Recommend a Player", "" %></li>
+      <li><%= link_to "My Recommendations", "" %></li>
+      <li><%= link_to "My Votes", "" %></li>
+      <li><%= link_to "Random Player", "" %></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#">The Club <span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li><%= link_to "Rate Players", "" %></li>
+    </ul>
+  </li>
+</ul>
+-->
